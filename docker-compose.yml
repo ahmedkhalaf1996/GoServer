@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    image: ahmedkhalaf666/dance-server:1
+    ports:
+      - 80:80
+      - 5001:5001
+      - 8080:8080
+      - 8090:8090
+    environment:
+      DB_URL: mongodb://db/vidly
+      AWSMAILHOST:
+      AWSMAILUSERNAME: 
+      AWSMAILPASSWORD: 
+      AWSSNSCREDID: 
+      AWSSNSCREDSECRET:
+    command: ./mainapp
+    restart: always
+
+  db:
+    image: mongo:4.2.1
+    ports:
+      - 27017:27017
+    volumes:
+      - dance:/data/db
+    restart: always
+
+
+volumes:
+  dance:

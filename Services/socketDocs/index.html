@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>You Can Use <a href="https://www.postman.com/downloads/">Post Man </a> For Testing</h1>
+    
+
+    <p>You Can Get Room ID From Main Api </p>
+    <h1>Connecting URl : ws://<span class="ip"></span>:8080/chat/ + roomid</h1>
+    <h2>OR</h2>
+    <h1>Connecting URl : ws://<span class="ip"></span>:8080/chatGroup/ + ChatGroupRoomID</h1>
+    
+    <h3>chat</h3>
+    <h2>Example</h2>
+    <h1>ws://<span class="ip"></span>:8080/chat/637c97d81c11826b3f8e354e</h1>
+    
+    <h3>chatGroup</h3>
+    <h2>Example</h2>
+    <h1>ws://<span class="ip"></span>:8080/chatGroup/637c97d81c11826b3f8e354e</h1>
+
+
+
+    <h1>PayLoad Model</h1>
+    <h2>
+        {
+            "message": string,
+            "messageType":[]string,
+            "sender":string,
+            "received":string
+          }
+    </h2>
+    
+    <h1>Example :</h1>
+    <h2>
+        {
+            "message": "last Test",
+            "messageType": [
+              "stringMessage"
+            ],
+            "sender": "637331d35d9d5bd2af78e876",
+            "received": "637332755d9d5bd2af78e878"
+          }
+    </h2>
+
+    ################################ GROUP ###########################################
+
+    <h1>Connecting URl : ws://<span class="ip"></span>/chatGroup/ + ChatGroupRoomID</h1>
+    <h2>OR</h2>
+    <h1>Connecting URl : ws://<span class="ip"></span>/chatGroup/ + ChatGroupRoomID</h1>
+    
+    <h2>Example</h2>
+    <h1>ws://<span class="ip"></span>/chatGroup/637c97d81c11826b3f8e354e</h1>
+    
+    <h2>OR</h2>
+    <h1>ws://<span class="ip"></span>/chatGroup/637c97d81c11826b3f8e354e</h1>
+
+    <h1>PayLoad Model</h1>
+    <h2>
+        {
+            "message": string,
+            "messageType":[]string,
+            "sender":string
+          }
+    </h2>
+    
+    <h1>Example :</h1>
+    <h2>
+        {
+            "message": "last Test",
+            "messageType": [
+              "stringMessage"
+            ],
+            "sender": "637331d35d9d5bd2af78e876"
+          }
+    </h2>
+
+
+
+<h1>
+  ## -------------------------|  live Streming Docs  |-------------------------------- #
+  <br>
+
+  create session
+  Post Request
+<br>
+http://<span class="ip"></span>:5001/session
+<br>
+Body {
+     "title":"ahmed",
+     "host":"ahmed"
+   # example "title":"ahmed",
+   # example "host":"ahmed"
+}
+<br>
+>> will return 
+<br>
+
+{
+  "socket": stirng
+ ## Example     "socket": "c17eaac2e7714f5ec0c485b27629a944bfa4523b"
+}
+<br>
+
+## Get Session GetSession - Checks if session exists.
+<br>
+
+## Get Request
+<br>
+
+http://<span class="ip"></span>:5001/connect?url=SessionUrl
+<br>
+
+>> return 200 stuatus Response if exists
+<br>
+
+>> Or  "error": "Socket connection not found." as json data
+<br>
+
+## !! ConnectSession - Given a host returns the session object.
+<br>
+
+## Post Reques
+<br>
+
+http://<span class="ip"></span>:5001/connect/SessionUrl
+<br>
+
+body {
+    "host" : stirng
+  # example  "host":"ahmed"
+}
+
+
+<br>
+
+# ---------------------------------------------- #
+<br>
+
+## Ws coonection
+<br>
+
+http://<span class="ip"></span>:5001/ws/:SocketString
+</h1>
+
+<h1>################################################################</h1>
+<h2>################################################################</h2>
+<h3>--------------------- NOTIFICATION -----------------------------</h3>
+
+<h1>
+  ws://<span class="ip"></span>:8090/notification/{userid}
+  example
+  ws://<span class="ip"></span>:8090/notification/63c9d364ea446325c5323b25
+</h1>
+
+
+
+
+
+
+<script >
+  let hostname = window.location.hostname;
+
+const collection = document.getElementsByClassName("ip");
+for (let i = 0; i < collection.length; i++) {
+  collection[i].innerHTML = hostname
+}
+
+
+</script>
+</body>
+
+
+</html>
+
+
