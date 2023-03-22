@@ -10,7 +10,8 @@ EC2 >> Launch an instance
     https://www.youtube.com/watch?v=7vf210p2tJg
     https://github.com/aaronwht/EC2    
 ]
-
+# 80 8080 5001 8090
+ ssh -i "ec2acesskey.pem" ec2-user@ec2-44-214-1-200.compute-1.amazonaws.com
 
 create and download key pair (login) | named GoServerAccess 
 || Get the File on the App folder
