@@ -1,0 +1,33 @@
+name: Deploy To Docker
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  DOCKER_REPO: "dance-server"
+  DOCKER_TAG: "2"
+
+jobs:
+  build-deployTo-docker:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USER}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Build the Docker iamge 
+      run: docker build . --file Dockerfile --tag  ${{secrets.DOCKER_USER}}/$DOCKER_REPO:$DOCKER_TAG
+
+    - name: Docker Push 
+      run: docker push ${{secrets.DOCKER_USER}}/$DOCKER_REPO:$DOCKER_TAG
+
+
+
+
